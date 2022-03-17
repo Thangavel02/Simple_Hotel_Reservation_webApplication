@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>Room page</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <style>
+    
+
+    
+   .text-block {
+  display: inline-block;
+  background-color: grey;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-inline: 50px;
+
+}
+  
+ 
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+
+button {
+                width: 50px;
+                height: 40px;
+                font-size: 30px;
+                background-color: green;
+                color: honeydew;
+            }
+button:hover {
+                background-color: greenyellow;
+                color: grey;
+            }
+
+     
+     
+  input[type=submit] {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  }
+  .Center {
+  width: 200px;
+  height: 200px;
+  background: #0088cc;
+  margin: auto;
+  padding: 2%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 10px;
+  right: 0;
+}
+ .submit_box {
+  position: absolute;
+  bottom: 30px;
+  right: 750px;
+  
+}
+
+</style>
+  </head>
+  <body style="background-color:gold;">
+  <div class="top-right"><i class='fas fa-user-alt' style='font-size:24px;'></i><span th:text="${Uname}"></span>
+</div>
+  <br>
+  
+    <img style="padding:20px;padding-left:50px;padding-top:50px;" src="Family_budget_room.jpg" alt="Submit" width="300" height="300">
+    <img  style="display:inline;padding:20px;padding-top:50px;" src="Family_luxery_room.jpg"  width="300" height="300">
+    <img style="display:inline;padding:20px;padding-top:50px;" src="Couple_budget_room.jpg" alt="Submit" width="300" height="300">
+    <img style="display:inline;padding:20px;padding-top:50px;" src="Couple_luxery_room.jpg" alt="Submit" width="300" height="300"><br>
+    
+    <form action="payment_page">
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <div class="text-block">
+    <h2>Family Budget Room<h2>     
+    <label for="room1">Select Required rooms:</label><br><br>
+    <input style="padding:10px;font-size:large; text-align:center" type="number"  name="room1" min="0" max="5" value="0">
+    </div>
+    <div class="text-block">
+    <h2>Family Luxery Room<h2>     
+    <label for="room2">Select Required rooms:</label><br><br>
+    <input style="padding:10px;font-size:large; text-align:center" type="number"  name="room2" min="0" max="5" value="0">
+    </div>
+    <div class="text-block">
+    <h2>Couple Budget Room<h2>     
+    <label for="room3">Select Required rooms:</label><br><br>
+    <input style="padding:10px;font-size:large; text-align:center" type="number"  name="room3" min="0" max="5" value="0">
+    </div>
+    <div class="text-block">
+    <h2>Couple Luxery Room<h2>     
+    <label for="room4">Select Required rooms:</label><br><br>
+    <input style="padding:10px;font-size:large; text-align:center" type="number"  name="room4" min="0" max="5" value="0">
+    </div>
+    <div class="submit_box">
+    <input type="submit" value="Submit"></div>
+    </form>
+  
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+<head>
+<title>Home page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<style>
+
+button {
+                width: 200px;
+                height: 50px;
+                font-size: 20px;
+                background-color: green;
+                color: honeydew;
+            }
+button:hover {
+                background-color: greenyellow;
+                color: grey;
+            }
+    *{
+	margin: 0;
+	padding: 0;
+    }
+    .background-image{
+	background-image: url('./homeroom1.jpg');
+	background-size : cover;
+	background-repeat: no-repeat;
+	height:100vh;
+    }
+    .cent {
+    margin: 0;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    }
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+   font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+h1 {
+  font-size: 70px;
+}
+
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+
+
+<div class="container">
+  <div class="background-image"></div>
+  
+  
+  <div class="top-right"><i class='fas fa-user-alt' style='font-size:24px'></i><span th:text="${Uname}"></span>
+</div>
+ 
+  <div class="centered">      <h1 style="color:black;text-align:center;"> Welcome to Taj Hotel</h1>
+      <h3 style="color:black;text-align:center;"> World class Luxory hotel, which makes you feel in the Heaven</h3>
+      <h2 style="color:black;text-align:center;"> Call 999999999 for reservations</h2>
+      <div class="cent">
+      <form method="get" action="rooms">
+      <button type="submit">Click here to see the room</button> 
+      </form>
+      </div>
+      </div></div>
+</div>
+
+</body>
+</html> 

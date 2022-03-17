@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+<head>
+<title>Payment page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+</style>
+</head>
+<body>
+
+<h2>Payment for Room Booking</h2>
+
+
+<div class="top-right"><i class='fas fa-user-alt' style='font-size:24px'></i><span th:text="${Uname}"></span>
+</div>
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form >
+      
+        <div class="row">
+          <div class="col-25">
+    <div class="container">
+      <h4>Room you booked </h4>
+      
+      <span th:if="${room1 >0 }"> <p>Family_Budget_Room &nbsp&nbsp <span th:text="${room1}"> </span>&nbsp&nbsp&nbsp&nbsp ₹<span th:text="${value1}"> </span></p></span>
+      <span th:if="${room2 >0 }"> <p>Family_Luxery_Room &nbsp&nbsp <span th:text="${room2}"> </span>&nbsp&nbsp&nbsp&nbsp ₹<span th:text="${value2}"> </span></p></span>
+      <span th:if="${room3 >0 }"> <p>Couple_Budget_Room &nbsp&nbsp <span th:text="${room3}"> </span>&nbsp&nbsp&nbsp&nbsp ₹<span th:text="${value3}"> </span></p></span>
+      <span th:if="${room4 >0 }"> <p>Couple_Luxery_Room &nbsp&nbsp <span th:text="${room4}"> </span>&nbsp&nbsp&nbsp&nbsp ₹<span th:text="${value4}"> </span></p></span>
+      <hr>
+      <p>Total <span class="price" style="color:black"><b>₹<span th:text="${value}"> </span></b></span></p>
+    </div>
+  </div>
+
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Card Holder Name</label>
+            <input type="text" id="cname" name="cardname" placeholder="Name on Card">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="XXXX-XXXX-XXXX-XXXX">
+            
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Expire</label>
+                <input type="text" id="expyear" name="expyear" placeholder="MM/YYYY">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" >
+              </div>
+            </div>
+            <button class="btn" type="button" onclick="alert('Payment Successful')">Submit</button>
+          </div>
+          
+        </div>
+       
+       
+      </form>
+    </div>
+  </div>
+  
+
+</div>
+
+</body>
+</html>
