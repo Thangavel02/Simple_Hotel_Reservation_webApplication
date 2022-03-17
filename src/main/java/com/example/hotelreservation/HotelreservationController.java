@@ -14,7 +14,7 @@ public class HotelreservationController {
     public String Login_page() {
     	return "Login_page";
     }
-    /* http://localhost:8080/home_page */
+    /* http://localhost:8080/home_pageSample */
     @GetMapping("/home_page")
     public String home_page(@RequestParam("Uname")String Uname, Model model) {
     	model.addAttribute("Uname", Uname);
